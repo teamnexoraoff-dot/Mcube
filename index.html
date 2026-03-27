@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MCubes Cafe in Coimbatore — Nutri Power Plate. Fresh chapati, paratha &amp; sabji combos with salad. Minimal oil. 100% vegetarian. Near Bharathiyar University.">
+<meta name="theme-color" content="#0C0C0C">
 <title>MCubes Cafe — Nutri Power Plate · Coimbatore</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="https://instagram.fmaa8-1.fna.fbcdn.net/v/t51.2885-19/434616876_1063642574698906_121644992074264005_n.jpg?stp=dst-jpg_s150x150_tt6&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDYwLmMyIn0&amp;_nc_ht=instagram.fmaa8-1.fna.fbcdn.net&amp;_nc_cat=110&amp;_nc_oc=Q6cZ2gFUw9XfbPfdWyMysVM50qilMjvrBLJJcp7M9XHaPH5IDy-1VcFjKOoslh0jNUOnDSE&amp;_nc_ohc=DZNrBIylRMgQ7kNvwGMVuT4&amp;_nc_gid=lH9k5yBFYNuC_94qhSCcGA&amp;edm=APoiHPcBAAAA&amp;ccb=7-5&amp;oh=00_AfwzoR2G0ielsnilhI2Q_KamAPOz9I8y596qAmDiShiPuw&amp;oe=69CCA508&amp;_nc_sid=22de04">
+<meta property="og:title" content="MCubes Cafe — Nutri Power Plate · Coimbatore">
+<meta property="og:description" content="Fresh chapati, paratha &amp; sabji combos with salad. Minimal oil. 100% vegetarian. Near Bharathiyar University.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://instagram.fmaa8-1.fna.fbcdn.net/v/t51.2885-19/434616876_1063642574698906_121644992074264005_n.jpg?stp=dst-jpg_s150x150_tt6&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDYwLmMyIn0&amp;_nc_ht=instagram.fmaa8-1.fna.fbcdn.net&amp;_nc_cat=110&amp;_nc_oc=Q6cZ2gFUw9XfbPfdWyMysVM50qilMjvrBLJJcp7M9XHaPH5IDy-1VcFjKOoslh0jNUOnDSE&amp;_nc_ohc=DZNrBIylRMgQ7kNvwGMVuT4&amp;_nc_gid=lH9k5yBFYNuC_94qhSCcGA&amp;edm=APoiHPcBAAAA&amp;ccb=7-5&amp;oh=00_AfwzoR2G0ielsnilhI2Q_KamAPOz9I8y596qAmDiShiPuw&amp;oe=69CCA508&amp;_nc_sid=22de04">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -27,6 +35,9 @@ body{
   font-family:'DM Sans',sans-serif;font-weight:300;
   line-height:1.7;overflow-x:hidden;
 }
+img{max-width:100%;height:auto}
+a:focus-visible,button:focus-visible{outline:2px solid var(--y);outline-offset:2px}
+::selection{background:rgba(232,176,0,.25);color:var(--white)}
 
 /* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar{width:3px}
@@ -127,12 +138,48 @@ nav.scrolled{background:rgba(12,12,12,0.97)}
 }
 .wa-float:hover .wa-label{opacity:1}
 
+/* ─── MOBILE ORDER BAR ─── */
+.order-bar{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:820;
+  background:rgba(20,20,20,.82);
+  border:1px solid var(--bdr2);
+  border-radius:14px;
+  padding:10px;
+  display:none;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 18px 60px rgba(0,0,0,.55);
+}
+.ob-row{display:flex;gap:10px}
+.ob-btn{
+  flex:1;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:12px 12px;border-radius:12px;
+  border:1px solid var(--bdr);
+  background:rgba(255,255,255,.03);
+  color:var(--white);
+  text-decoration:none;
+  font-size:12px;font-weight:500;letter-spacing:.06em;
+  transition:transform .15s,border-color .2s,background .2s;
+}
+.ob-btn:hover{transform:translateY(-1px);border-color:var(--y-border)}
+.ob-primary{background:var(--y);color:var(--blk);border-color:var(--y)}
+.ob-primary:hover{border-color:var(--y);background:rgba(232,176,0,.92)}
+.ob-btn svg{width:16px;height:16px;fill:currentColor}
+
 /* ─── HERO ─── */
 .hero{
+  position:relative;
   min-height:100vh;display:grid;
   grid-template-columns:1fr 1fr;
   padding-top:68px;
   overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 18% 22%,rgba(232,176,0,.14),transparent 42%),
+             radial-gradient(circle at 80% 64%,rgba(255,255,255,.06),transparent 48%);
+  opacity:.9;
 }
 .hero-left{
   padding:80px 48px 80px 64px;
@@ -554,6 +601,65 @@ nav.scrolled{background:rgba(12,12,12,0.97)}
 }
 .hc2-body{font-size:13.5px;color:var(--txt2);line-height:1.7}
 
+/* ─── REVIEWS ─── */
+#reviews{padding:96px 64px;background:var(--surface)}
+.review-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  background:var(--bdr);border:1px solid var(--bdr);
+  border-radius:4px;overflow:hidden;margin-top:56px;
+}
+.review{
+  background:var(--surface2);
+  padding:34px 32px;
+  position:relative;overflow:hidden;
+}
+.review::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 24% 18%,rgba(232,176,0,.14),transparent 52%);
+  opacity:.75;
+}
+.stars{display:flex;gap:4px;margin-bottom:18px}
+.star{width:14px;height:14px;fill:var(--y);opacity:.95}
+.review-quote{
+  font-size:14px;color:var(--txt);
+  line-height:1.75;
+}
+.review-meta{
+  margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  border-top:1px solid var(--bdr);padding-top:16px;
+}
+.review-name{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white)}
+.review-note{font-size:12px;color:var(--txt3);letter-spacing:.04em}
+
+/* ─── FAQ ─── */
+#faq{padding:96px 64px;background:var(--blk)}
+.faq-wrap{margin-top:56px;max-width:900px}
+.faq-item{
+  border:1px solid var(--bdr);
+  background:rgba(20,20,20,.55);
+  border-radius:4px;
+  overflow:hidden;
+  margin-bottom:10px;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.faq-item summary{
+  cursor:pointer;list-style:none;
+  padding:18px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-size:14px;color:var(--white);font-weight:400;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'+';
+  font-family:'DM Mono',monospace;
+  color:var(--y);
+  letter-spacing:.1em;
+  transition:transform .25s ease;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-body{padding:0 18px 18px;color:var(--txt2);font-size:13.5px;line-height:1.75}
+
 /* ─── LOCATION ─── */
 #location{padding:96px 64px;background:var(--surface)}
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px;align-items:start}
@@ -664,10 +770,12 @@ footer{
   nav{padding:0 24px}
   .nav-center,.nav-wa{display:none}
   .ham{display:flex}
+  .order-bar{display:block}
+  .wa-float{bottom:94px}
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-right{display:none}
   .hero-left{padding:48px 24px 60px}
-  #gallery,#menu,#health,#location,footer{padding:64px 24px}
+  #gallery,#menu,#health,#reviews,#faq,#location,footer{padding:64px 24px}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .g-item.tall{grid-row:span 1}
   .ms-item img{height:240px}
@@ -678,6 +786,7 @@ footer{
   .side-tab{border:1px solid var(--bdr);border-left:2px solid var(--bdr);border-radius:3px;padding:10px 14px;width:auto}
   .side-tab.active{border-left-color:var(--y)}
   .side-tab.active::after{display:none}
+  .review-grid{grid-template-columns:1fr}
   .health-grid2{grid-template-columns:1fr 1fr}
   .loc-grid{grid-template-columns:1fr}
   footer{padding:40px 24px}
@@ -756,11 +865,11 @@ footer{
   </div>
   <div class="hero-right">
     <div class="hero-img-top">
-      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80" alt="Paratha with sabji">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&amp;q=80" alt="Paratha with sabji" fetchpriority="high" decoding="async">
       <span class="hero-img-label">Paratha + Sabji</span>
     </div>
     <div class="hero-img-bot">
-      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80" alt="Roti combo">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&amp;q=80" alt="Roti combo" decoding="async">
       <span class="hero-img-label">Roti Combo</span>
     </div>
   </div>
@@ -799,23 +908,23 @@ footer{
   </div>
   <div class="gallery-grid reveal reveal-d1">
     <div class="g-item tall">
-      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=85" alt="Paratha with paneer sabji">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&amp;q=85" alt="Paratha with paneer sabji" loading="lazy" decoding="async">
       <div class="g-overlay"><span class="g-label">Paneer Paratha Combo</span></div>
     </div>
     <div class="g-item">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Fresh salad">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&amp;q=80" alt="Fresh salad" loading="lazy" decoding="async">
       <div class="g-overlay"><span class="g-label">Fresh Salad</span></div>
     </div>
     <div class="g-item">
-      <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&q=80" alt="Dal fry">
+      <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&amp;q=80" alt="Dal fry" loading="lazy" decoding="async">
       <div class="g-overlay"><span class="g-label">Dal Fry</span></div>
     </div>
     <div class="g-item">
-      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80" alt="Roti combo">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&amp;q=80" alt="Roti combo" loading="lazy" decoding="async">
       <div class="g-overlay"><span class="g-label">Roti Combo</span></div>
     </div>
     <div class="g-item">
-      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Gobi paratha">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&amp;q=80" alt="Gobi paratha" loading="lazy" decoding="async">
       <div class="g-overlay"><span class="g-label">Gobi Paratha</span></div>
     </div>
   </div>
@@ -1062,6 +1171,90 @@ footer{
   </div>
 </section>
 
+<!-- ══ REVIEWS ══ -->
+<section id="reviews">
+  <div class="sec-header reveal">
+    <div class="sec-tag">Loved by Locals</div>
+    <h2 class="sec-title">Clean food,<br><em>consistent taste.</em></h2>
+    <p class="sec-sub">Quick, balanced meals for students and working professionals — made fresh every day.</p>
+  </div>
+
+  <div class="review-grid reveal reveal-d1" aria-label="Customer reviews">
+    <div class="review">
+      <div class="stars" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <div class="review-quote">“Finally a place near campus where you can eat daily without feeling heavy. The salad + sabji combo is a game-changer.”</div>
+      <div class="review-meta">
+        <div class="review-name">Student</div>
+        <div class="review-note">Near Bharathiyar University</div>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="stars" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <div class="review-quote">“Minimal oil, good portions, and the menu is super clear. Love the paneer combos — perfect post-workout meal.”</div>
+      <div class="review-meta">
+        <div class="review-name">Regular</div>
+        <div class="review-note">Quick pickup</div>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="stars" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <div class="review-quote">“Fast service and consistently clean food. The salad is always fresh — that’s rare. Highly recommended.”</div>
+      <div class="review-meta">
+        <div class="review-name">Professional</div>
+        <div class="review-note">Lunch favorite</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="sec-header reveal">
+    <div class="sec-tag">FAQ</div>
+    <h2 class="sec-title">Everything you need<br><em>to know.</em></h2>
+    <p class="sec-sub">Quick answers before you order.</p>
+  </div>
+
+  <div class="faq-wrap reveal reveal-d1">
+    <details class="faq-item">
+      <summary>Is the menu 100% vegetarian?</summary>
+      <div class="faq-body">Yes — MCubes Cafe is 100% vegetarian. Our focus is balanced meals with minimal oil and fresh ingredients.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Does every combo include salad?</summary>
+      <div class="faq-body">Yes. Roti + Sabji combos and Paratha combos include a fresh salad by default.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I order on WhatsApp?</summary>
+      <div class="faq-body">Yes. Tap “Order on WhatsApp” to message us with your combo and pickup time.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Where are you located?</summary>
+      <div class="faq-body">We’re in Kalveerampalayam, near Bharathiyar University, Coimbatore. Use “Open in Maps” to navigate.</div>
+    </details>
+  </div>
+</section>
+
 <!-- ══ LOCATION ══ -->
 <section id="location">
   <div class="sec-header reveal">
@@ -1151,6 +1344,20 @@ footer{
     <div class="footer-addr">26, Jayandar Nagar, Kalveerampalayam, Coimbatore – 641046</div>
   </div>
 </footer>
+
+<!-- MOBILE ORDER BAR -->
+<div class="order-bar" aria-label="Quick actions">
+  <div class="ob-row">
+    <a class="ob-btn ob-primary" href="https://wa.me/917603824812?text=Hi%20MCubes!%20I'd%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Order
+    </a>
+    <a class="ob-btn" href="https://maps.app.goo.gl/KWdGFWYtLWzfpa9h8" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2c3.866 0 7 3.134 7 7 0 5.25-7 13-7 13S5 14.25 5 9c0-3.866 3.134-7 7-7zm0 9.5A2.5 2.5 0 1 0 12 6.5a2.5 2.5 0 0 0 0 5z"/></svg>
+      Open Maps
+    </a>
+  </div>
+</div>
 
 <script>
 // NAV scroll
