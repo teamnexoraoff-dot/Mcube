@@ -367,6 +367,159 @@ nav.scrolled{background:rgba(12,12,12,0.97)}
   color:var(--white);
 }
 
+/* ─── IPL ─── */
+#ipl{padding:96px 64px;background:var(--blk)}
+.ipl-wrap{
+  margin-top:56px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch;
+}
+.ipl-card{
+  border:1px solid var(--bdr);
+  border-radius:4px;
+  overflow:hidden;
+  background:rgba(20,20,20,.6);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.ipl-left{padding:44px 40px;position:relative;overflow:hidden}
+.ipl-left::before{
+  content:'';position:absolute;inset:-2px;pointer-events:none;
+  background:radial-gradient(circle at 22% 22%,rgba(232,176,0,.18),transparent 44%),
+             radial-gradient(circle at 74% 72%,rgba(255,255,255,.07),transparent 52%);
+  opacity:.95;
+}
+.ipl-kicker{
+  position:relative;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--y);
+  display:flex;align-items:center;gap:10px;
+}
+.ipl-kicker::before{content:'';width:22px;height:1px;background:var(--y)}
+.ipl-title{
+  position:relative;
+  font-family:'Playfair Display',serif;
+  font-size:40px;font-weight:700;color:var(--white);
+  letter-spacing:-.01em;line-height:1.12;
+  margin-top:18px;
+}
+.ipl-body{
+  position:relative;
+  margin-top:14px;
+  color:var(--txt2);
+  font-size:14.5px;line-height:1.75;max-width:560px;
+}
+.ipl-pills{
+  position:relative;
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;
+}
+.ipl-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--bdr);
+  padding:8px 14px;border-radius:999px;
+  font-size:12px;color:var(--txt2);letter-spacing:.04em;
+  background:rgba(255,255,255,.02);
+}
+.ipl-pill b{color:var(--white);font-weight:500}
+.ipl-actions{
+  position:relative;
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;
+}
+.ipl-actions a{border-radius:10px}
+.ipl-note{
+  position:relative;
+  margin-top:16px;
+  color:var(--txt3);
+  font-size:12px;letter-spacing:.03em;line-height:1.7;
+}
+.ipl-right{display:flex;flex-direction:column}
+.ipl-media{
+  height:100%;
+  display:grid;grid-template-rows:1fr auto;
+}
+.ipl-media-top{position:relative;overflow:hidden}
+.ipl-media-top img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.78) saturate(1.02);
+  transform:scale(1.02);
+}
+.ipl-media-top::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,12,12,.72) 0%,transparent 55%);
+  pointer-events:none;
+}
+.ipl-media-cap{
+  position:absolute;left:14px;right:14px;bottom:12px;z-index:1;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.ipl-media-cap span{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--white);
+}
+.ipl-media-bot{
+  border-top:1px solid var(--bdr);
+  padding:16px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.ipl-mini{
+  display:flex;flex-direction:column;gap:4px;
+}
+.ipl-mini b{color:var(--white);font-weight:600}
+.ipl-mini span{color:var(--txt3);font-size:12px;letter-spacing:.03em}
+
+/* ─── STORY ─── */
+#story{padding:96px 64px;background:var(--surface)}
+.founders{
+  margin-top:56px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  background:var(--bdr);border:1px solid var(--bdr);
+  border-radius:4px;overflow:hidden;
+}
+.founder{
+  background:var(--surface2);
+  padding:34px 32px;
+  position:relative;overflow:hidden;
+}
+.founder::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 28% 18%,rgba(232,176,0,.14),transparent 52%);
+  opacity:.7;
+}
+.f-top{position:relative;display:flex;align-items:center;gap:12px}
+.f-avatar{
+  width:46px;height:46px;border-radius:14px;
+  border:1px solid var(--bdr2);
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(232,176,0,.22),rgba(255,255,255,.05));
+  color:var(--white);
+  font-family:'DM Mono',monospace;
+  letter-spacing:.14em;
+}
+.f-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--white);
+  letter-spacing:-.01em;
+}
+.f-role{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--txt3);margin-top:2px;
+}
+.f-body{
+  position:relative;
+  margin-top:18px;
+  color:var(--txt2);
+  font-size:13.5px;line-height:1.75;
+}
+.f-tag{
+  position:relative;
+  margin-top:18px;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 12px;border-radius:999px;
+  border:1px solid var(--bdr);
+  color:var(--txt3);font-size:11px;letter-spacing:.06em;
+}
+
 /* ─── MENU ─── */
 #menu{padding:96px 64px;background:var(--surface)}
 .insta-menu-card{
@@ -755,7 +908,7 @@ nav.scrolled{background:rgba(12,12,12,0.97)}
 #location{padding:96px 64px;background:var(--surface)}
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px;align-items:start}
 .map-card{border-radius:4px;overflow:hidden;border:1px solid var(--bdr)}
-.map-card iframe{width:100%;height:340px;display:block;border:none;filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(1.1)}
+.map-card iframe{width:100%;height:340px;display:block;border:none;filter:grayscale(1) contrast(1.05) brightness(.92)}
 .map-footer{
   padding:16px 20px;background:var(--surface2);
   border-top:1px solid var(--bdr);
@@ -866,9 +1019,12 @@ footer{
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-right{display:none}
   .hero-left{padding:48px 24px 60px}
-  #gallery,#moments,#menu,#health,#reviews,#faq,#location,footer{padding:64px 24px}
+  #gallery,#moments,#ipl,#story,#menu,#health,#reviews,#faq,#location,footer{padding:64px 24px}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .g-item.tall{grid-row:span 1}
+  .ipl-wrap{grid-template-columns:1fr}
+  .ipl-left{padding:34px 28px}
+  .ipl-title{font-size:34px}
   .ms-item img{height:240px}
   .menu-layout{grid-template-columns:1fr;gap:32px}
   .menu-preview{position:relative;top:auto}
@@ -880,6 +1036,7 @@ footer{
   .side-tab.active{border-left-color:var(--y)}
   .side-tab.active::after{display:none}
   .review-grid{grid-template-columns:1fr}
+  .founders{grid-template-columns:1fr}
   .health-grid2{grid-template-columns:1fr 1fr}
   .loc-grid{grid-template-columns:1fr}
   footer{padding:40px 24px}
@@ -907,9 +1064,11 @@ footer{
     </span>
   </a>
   <ul class="nav-center">
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#menu">Menu</a></li>
-    <li><a href="#health">Nutrition</a></li>
+    <li><a href="#ipl">IPL Nights</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#location">Find Us</a></li>
   </ul>
   <a href="https://wa.me/917603824812?text=Hi%20MCubes!%20I'd%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="nav-wa">
@@ -923,9 +1082,11 @@ footer{
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
-  <a href="#gallery" onclick="closeMob()">Gallery</a>
   <a href="#menu" onclick="closeMob()">Menu</a>
-  <a href="#health" onclick="closeMob()">Nutrition</a>
+  <a href="#ipl" onclick="closeMob()">IPL Nights</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#story" onclick="closeMob()">Our Story</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
   <a href="#location" onclick="closeMob()">Find Us</a>
 </div>
 
@@ -945,7 +1106,7 @@ footer{
       you.
     </h1>
     <p class="hero-body reveal reveal-d2">
-      Freshly made chapati, paratha &amp; sabji combos — every plate balanced with protein, fibre, and flavour. Near Bharathiyar University, Coimbatore.
+      Clean comfort food, made fresh. Choose your combo, add your sabji, salad on us — perfect for students and working pros in Coimbatore.
     </p>
     <div class="hero-actions reveal reveal-d2">
       <a href="#menu" class="btn-gold">View Full Menu</a>
@@ -954,7 +1115,7 @@ footer{
     <div class="hero-pills reveal reveal-d3">
       <span class="pill"><span class="pill-dot"></span>100% Vegetarian</span>
       <span class="pill"><span class="pill-dot"></span>Minimal Oil</span>
-      <span class="pill"><span class="pill-dot"></span>Fresh Daily</span>
+      <span class="pill"><span class="pill-dot"></span>Salad Included</span>
     </div>
   </div>
   <div class="hero-right">
@@ -996,9 +1157,9 @@ footer{
 <!-- ══ GALLERY ══ -->
 <section id="gallery">
   <div class="sec-header reveal">
-    <div class="sec-tag">Photo Gallery</div>
-    <h2 class="sec-title">The <em>food</em><br>speaks for itself.</h2>
-    <p class="sec-sub">Every dish prepared fresh, every day — minimal oil, maximum nutrition.</p>
+    <div class="sec-tag">Gallery</div>
+    <h2 class="sec-title">Food that looks<br><em>as good as it feels.</em></h2>
+    <p class="sec-sub">Freshly made plates, clean ingredients, and simple combos you can eat daily.</p>
   </div>
   <div class="gallery-grid reveal reveal-d1">
     <div class="g-item tall">
@@ -1027,43 +1188,131 @@ footer{
 <!-- ══ MOMENTS ══ -->
 <section id="moments">
   <div class="sec-header reveal">
-    <div class="sec-tag">More Photos</div>
-    <h2 class="sec-title">Everyday <em>fresh</em>,<br>everyday <em>real</em>.</h2>
-    <p class="sec-sub">A few more glimpses of our plates, ingredients, and vibe. Slide to explore.</p>
+    <div class="sec-tag">More Moments</div>
+    <h2 class="sec-title">Swipe through<br><em>today’s vibe.</em></h2>
+    <p class="sec-sub">Quick peeks of plates, prep, and the cafe feel. Slide to explore.</p>
   </div>
 
   <div class="moments-track reveal reveal-d1" aria-label="Cafe photo moments">
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&amp;q=80" alt="Fresh salad bowl" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&amp;q=85" alt="Fresh salad bowl" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Fresh Salad</span><span>01</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&amp;q=80" alt="Indian thali style meal" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&amp;q=85" alt="Stuffed paratha with sides" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Balanced Plate</span><span>02</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&amp;q=80" alt="Roti and curry combo" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&amp;q=85" alt="Roti and curry combo" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Roti Combo</span><span>03</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&amp;q=80" alt="Stuffed paratha" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=1200&amp;q=85" alt="Paratha combo plate" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Paratha</span><span>04</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&amp;q=80" alt="Healthy bowl with vegetables" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200&amp;q=85" alt="Fresh ingredients and veggies" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Veggies</span><span>05</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=1200&amp;q=80" alt="Dal curry" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=1200&amp;q=85" alt="Dal curry" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Dal</span><span>06</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200&amp;q=80" alt="Fresh ingredients on a table" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&amp;q=85" alt="Colorful healthy bowl" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Ingredients</span><span>07</span></div>
     </div>
     <div class="moments-item">
-      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&amp;q=80" alt="Warm cafe interior" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&amp;q=85" alt="Warm cafe interior" loading="lazy" decoding="async">
       <div class="moments-cap"><span>Cafe Vibe</span><span>08</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IPL NIGHTS ══ -->
+<section id="ipl">
+  <div class="sec-header reveal">
+    <div class="sec-tag">Match Nights</div>
+    <h2 class="sec-title">Free IPL screening,<br><em>with your combo.</em></h2>
+    <p class="sec-sub">Bring your gang. Grab a plate. Catch every over — no ticket, just good vibes.</p>
+  </div>
+
+  <div class="ipl-wrap reveal reveal-d1">
+    <div class="ipl-card">
+      <div class="ipl-left">
+        <div class="ipl-kicker">Live screening</div>
+        <div class="ipl-title">Big screen energy.<br>Eat clean. Cheer louder.</div>
+        <div class="ipl-body">We screen IPL matches in the cafe so you can enjoy the atmosphere with light, filling food. Ideal for students and working professionals nearby.</div>
+        <div class="ipl-pills" aria-label="IPL highlights">
+          <span class="ipl-pill"><b>Free</b> match viewing</span>
+          <span class="ipl-pill">Group friendly seating</span>
+          <span class="ipl-pill">Quick combos + add-ons</span>
+          <span class="ipl-pill">Updates on Instagram</span>
+        </div>
+        <div class="ipl-actions">
+          <a class="im-btn" href="https://wa.me/917603824812?text=Hi%20MCubes!%20We%20are%203%20friends%20-%20please%20reserve%20a%20table%20for%20the%20IPL%20match." target="_blank" rel="noopener noreferrer">Reserve for Match</a>
+          <a class="im-btn" href="https://www.instagram.com/mcube_cafe" target="_blank" rel="noopener noreferrer">Match Updates</a>
+        </div>
+        <div class="ipl-note">Note: Screening depends on match schedule and broadcast availability.</div>
+      </div>
+    </div>
+
+    <div class="ipl-card ipl-right">
+      <div class="ipl-media">
+        <div class="ipl-media-top">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1200&amp;q=80" alt="Friends watching a cricket match on big screen" loading="lazy" decoding="async">
+          <div class="ipl-media-cap"><span>Match Vibes</span><span>IPL</span></div>
+        </div>
+        <div class="ipl-media-bot">
+          <div class="ipl-mini"><b>Come as a trio</b><span>We’re friend-owned — warm service, chill vibe</span></div>
+          <a class="im-btn" href="#menu" aria-label="Go to menu">See Combos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OUR STORY ══ -->
+<section id="story">
+  <div class="sec-header reveal">
+    <div class="sec-tag">Our Story</div>
+    <h2 class="sec-title">3 friends.<br><em>1 cafe.</em></h2>
+    <p class="sec-sub">Built by three friends with one goal: everyday food that’s clean, light, and ridiculously consistent.</p>
+  </div>
+
+  <div class="founders reveal reveal-d1" aria-label="Founders">
+    <div class="founder">
+      <div class="f-top">
+        <div class="f-avatar" aria-hidden="true">F1</div>
+        <div>
+          <div class="f-name">Founder 1</div>
+          <div class="f-role">Operations</div>
+        </div>
+      </div>
+      <div class="f-body">Keeps everything running smooth — from quick service to consistent taste.</div>
+      <div class="f-tag">Daily prep</div>
+    </div>
+    <div class="founder">
+      <div class="f-top">
+        <div class="f-avatar" aria-hidden="true">F2</div>
+        <div>
+          <div class="f-name">Founder 2</div>
+          <div class="f-role">Kitchen</div>
+        </div>
+      </div>
+      <div class="f-body">Focuses on minimal oil cooking and balanced plates that you can eat every day.</div>
+      <div class="f-tag">Minimal oil</div>
+    </div>
+    <div class="founder">
+      <div class="f-top">
+        <div class="f-avatar" aria-hidden="true">F3</div>
+        <div>
+          <div class="f-name">Founder 3</div>
+          <div class="f-role">Community</div>
+        </div>
+      </div>
+      <div class="f-body">Builds the cafe vibe — IPL nights, updates on Instagram, and a friendly place to hang out.</div>
+      <div class="f-tag">IPL nights</div>
     </div>
   </div>
 </section>
@@ -1073,7 +1322,7 @@ footer{
   <div class="sec-header reveal">
     <div class="sec-tag">Our Menu</div>
     <h2 class="sec-title">Every combo,<br><em>freshly made.</em></h2>
-    <p class="sec-sub">Pick your base, choose your sabji. Salad included with every combo.</p>
+    <p class="sec-sub">Pick your base. Choose your sabji. Salad included — simple, filling, and light.</p>
   </div>
 
   <div class="insta-menu-card reveal reveal-d1" aria-label="Menu on Instagram">
@@ -1274,7 +1523,7 @@ footer{
   <div class="sec-header reveal">
     <div class="sec-tag">Nutrition</div>
     <h2 class="sec-title">Why it's <em>good</em><br>for you.</h2>
-    <p class="sec-sub">Our Chapati + Sabji + Salad combo is engineered around your body's daily needs.</p>
+    <p class="sec-sub">A smart everyday plate: carbs + protein + veggies — balanced, not heavy.</p>
   </div>
   <div class="health-grid2 reveal reveal-d1">
     <div class="hc2">
@@ -1330,7 +1579,7 @@ footer{
   <div class="sec-header reveal">
     <div class="sec-tag">Loved by Locals</div>
     <h2 class="sec-title">Clean food,<br><em>consistent taste.</em></h2>
-    <p class="sec-sub">Quick, balanced meals for students and working professionals — made fresh every day.</p>
+    <p class="sec-sub">Fast, light, filling — the kind of meals you can actually eat every day.</p>
   </div>
 
   <div class="review-grid reveal reveal-d1" aria-label="Customer reviews">
@@ -1386,7 +1635,7 @@ footer{
   <div class="sec-header reveal">
     <div class="sec-tag">FAQ</div>
     <h2 class="sec-title">Everything you need<br><em>to know.</em></h2>
-    <p class="sec-sub">Quick answers before you order.</p>
+    <p class="sec-sub">Quick answers before you walk in or WhatsApp order.</p>
   </div>
 
   <div class="faq-wrap reveal reveal-d1">
@@ -1420,7 +1669,7 @@ footer{
     <div>
       <div class="map-card">
         <iframe
-          src="https://maps.app.goo.gl/KWdGFWYtLWzfpa9h8"
+          src="https://www.google.com/maps?q=26%2C%20Jayandar%20Nagar%2C%20Kalveerampalayam%2C%20Coimbatore%20641046&amp;output=embed"
           allowfullscreen loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="MCubes Cafe location">
@@ -1428,6 +1677,9 @@ footer{
         <div class="map-footer">
           <span class="map-footer-text">26, Jayandar Nagar, Kalveerampalayam</span>
           <a href="https://maps.app.goo.gl/KWdGFWYtLWzfpa9h8" target="_blank" rel="noopener noreferrer" class="map-open-btn">Open in Maps ↗</a>
+        </div>
+        <div style="padding:10px 20px;background:var(--surface2);border-top:1px solid var(--bdr);font-size:12px;color:var(--txt3);letter-spacing:.03em;">
+          If the map doesn’t load, use “Open in Maps”.
         </div>
       </div>
     </div>
@@ -1486,9 +1738,11 @@ footer{
       <div class="footer-tagline">Meet Your Cafe · Nutri Power Plate</div>
     </div>
     <div class="footer-links">
-      <a href="#gallery">Gallery</a>
       <a href="#menu">Menu</a>
-      <a href="#health">Nutrition</a>
+      <a href="#ipl">IPL Nights</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
       <a href="#location">Find Us</a>
       <a href="https://www.instagram.com/mcube_cafe" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
